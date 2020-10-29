@@ -18,3 +18,4 @@ include attachments/makefiles/server.mk
 
 include attachments/makefiles/help.mk
 
+include attachments/makefiles/docker.mk
