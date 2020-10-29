@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, request, jsonify, abort
 import uuid
+
+from flask import Blueprint, request, abort
+
 from src.loggings.logger import logger
 
 log = logger(__name__)
