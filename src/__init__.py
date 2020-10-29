@@ -8,4 +8,3 @@ os.environ["ENABLE_CORS"] = os.getenv("ENABLE_CORS", "1")
 os.environ["LOGGER_LEVEL"] = os.getenv("LOGGER_LEVEL", "debug")
 
 API_VERSION = os.environ["API_VERSION"]
-
