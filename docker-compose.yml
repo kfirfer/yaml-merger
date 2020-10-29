@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+
+  yaml-merger:
+    image: yaml-merger:latest
+    container_name: yaml-merger
+    build:
+      context: .
+      cache_from:
+        - yaml-merger:latest
+    env_file:
+      - .env
+    ports:
+      - 5010:5010
+    command: sh -c "
+      python -m src"
+
