@@ -10,7 +10,7 @@ api = Blueprint(__name__, __name__)
 
 
 def merge_yaml_files(input_files):
-    pass
+    return "fff"
 
 
 def delete_files(input_files):
@@ -31,6 +31,6 @@ def merge():
         text_file.write(yaml)
         text_file.close()
 
-    merge_yaml_files(input_files)
+    merged_yaml = merge_yaml_files(input_files)
     delete_files(input_files)
-    return str(yamls), 200
+    return merged_yaml, 200
