@@ -1,0 +1,7 @@
+key1:
+  key2:
+    value1: "value1"
+    # comment 2
+    array:
+      - name: one
+        version: 1

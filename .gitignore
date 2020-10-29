@@ -1,1 +1,6 @@
 .idea
+venv
+tests/output/*.yaml
+tests/output/*.json
+tests/output/*.xml
+
