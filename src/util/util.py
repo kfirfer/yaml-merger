@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import hashlib
+import os
 import random
 import string
 from datetime import datetime
@@ -36,3 +37,8 @@ def get_sha1(data):
     sha1 = hashlib.sha1(data.encode("utf-8"))
     sha1 = sha1.hexdigest()
     return sha1
+
+
+def delete_files(files):
+    for file in files:
+        os.remove(file)

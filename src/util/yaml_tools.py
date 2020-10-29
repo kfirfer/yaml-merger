@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+import uuid
 from copy import deepcopy
 
 from ruamel.yaml import round_trip_dump, round_trip_load
@@ -460,6 +461,21 @@ def normalize_docker_compose_command():
     output_file = open(args.output, 'w') if args.output else sys.stdout
     round_trip_dump(output_data, output_file)
     output_file.close()
+
+
+def merge_yaml_files(input_files):
+    uid = uuid.uuid4().hex
+    file_name = "/tmp/output-{}.yaml".format(uid)
+    file_contents = []
+    for f in input_files:
+        file = open(f, 'r')
+        file_contents.append(file.read())
+        file.close()
+    out_content = successive_merge(file_contents)
+    output_file = open(file_name, 'w')
+    round_trip_dump(out_content, output_file)
+    output_file.close()
+    return file_name
 
 
 if __name__ == '__main__':  # pragma: no cover

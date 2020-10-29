@@ -1,36 +1,15 @@
 # -*- coding: utf-8 -*-
-import os
 import uuid
 
 import flask
 from flask import Blueprint, request, abort
-from ruamel.yaml import round_trip_dump
 
 from src.loggings.logger import logger
-from src.util.yaml_tools import successive_merge
+from src.util.util import delete_files
+from src.util.yaml_tools import merge_yaml_files
 
 log = logger(__name__)
 api = Blueprint(__name__, __name__)
-
-
-def merge_yaml_files(input_files):
-    uid = uuid.uuid4().hex
-    file_name = "/tmp/output-{}.yaml".format(uid)
-    file_contents = []
-    for f in input_files:
-        file = open(f, 'r')
-        file_contents.append(file.read())
-        file.close()
-    out_content = successive_merge(file_contents)
-    output_file = open(file_name, 'w')
-    round_trip_dump(out_content, output_file)
-    output_file.close()
-    return file_name
-
-
-def delete_files(files):
-    for file in files:
-        os.remove(file)
 
 
 @api.route('/merge', methods=['POST'])
