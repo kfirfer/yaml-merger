@@ -1,5 +1,7 @@
 # yaml-merger
 
+REST API Server - merge multiple yaml files
+
 ### Get started
 
 Run [main](./src/__main__.py) 
