@@ -24,12 +24,17 @@
 		},
 		{
 			"name": "Merge",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    \"key1:\\r\\n  key2:\\r\\n    value1: \\\"value1\\\"\\r\\n    #\\r\\n    # this is comment of array\\r\\n    array:\\r\\n      # This is comment of array.one\\r\\n      - name: one\\r\\n        version: 1\\r\\n        another:\\r\\n          key2: value2\\r\\n        nestedArray:\\r\\n          - nest: \\\"nest1\\\"\\r\\n            nest2: \\\"nest2\\\"\\r\\n\",\n    \"## Top comment\\r\\nkey1:\\r\\n  # This is comment of key2\\r\\n  key2:\\r\\n    value2: \\\"value2\\\"\\r\\n    array:\\r\\n      - name: two\\r\\n        # This is comment of array.two.version : 2\\r\\n        version: 2\\r\\n        another:\\r\\n          key1: value1\\r\\n        nestedArray:\\r\\n          - nest: \\\"nest3\\\"\\r\\n            nest4: \\\"nest4\\\"\\r\\n\\r\\n\"\n]",
+					"raw": "[\n    \"key1:\\r\\n  key2:\\r\\n    value1: \\\"value1\\\"\\r\\n    #\\r\\n    # this is comment of array\\r\\n    array:\\r\\n      # This is comment of array.one\\r\\n      - name: one\\r\\n        version: 1\\r\\n        another:\\r\\n          key2: value2\\r\\n        nestedArray:\\r\\n          - nest: \\\"nest1\\\"\\r\\n            nest2: \\\"nest2\\\"\\r\\n\",\n    \"## Top comment\\r\\nkey1:\\r\\n  # This is comment of key2\\r\\n  key2:\\r\\n    value2: \\\"value2\\\"\\r\\n    array:\\r\\n      - name: two\\r\\n        # This is comment of array.two.version : 2\\r\\n        version: 2\\r\\n        another:\\r\\n          key1: value1\\r\\n        nestedArray:\\r\\n          - nest: \\\"nest3\\\"\\r\\n            nest4: \\\"nest4\\\"\\r\\n\\r\\n\",\n    \"key4: blabla\\r\\nkey5:\\r\\n  ## This is comment of key6\\r\\n  key6: 100\"\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -74,7 +79,7 @@
 	],
 	"variable": [
 		{
-			"id": "37399c7b-0423-4088-853d-fe37f3b78c86",
+			"id": "373e64b2-6ff3-48a8-b28a-0d5823a80fcd",
 			"key": "baseUrl",
 			"value": "http://localhost:5010"
 		}
