@@ -17,11 +17,7 @@ def register_profiling(app):
     @app.after_request
     def after_request(response):
         try:
-            if request.path == '/favicon.ico':
-                return response
-            elif request.path.startswith('/static'):
-                return response
-            elif request.path == '/health':
+            if request.path == '/favicon.ico' or request.path.startswith('/static') or request.path == '/health':
                 return response
 
             duration = int(round(time.time() * 1000)) - g.start
