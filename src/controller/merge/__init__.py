@@ -15,7 +15,7 @@ api = Blueprint(__name__, __name__)
 
 def merge_yaml_files(input_files):
     uid = uuid.uuid4().hex
-    file_name = "output-{}.yaml".format(uid)
+    file_name = "/tmp/output-{}.yaml".format(uid)
     file_contents = []
     for f in input_files:
         file = open(f, 'r')
@@ -41,7 +41,7 @@ def merge():
         abort(400, "Input error")
     for yaml in yamls:
         uid = uuid.uuid4().hex
-        file_name = "input-{}.yaml".format(uid)
+        file_name = "/tmp/input-{}.yaml".format(uid)
         input_files.append(file_name)
         text_file = open(file_name, "w")
         text_file.write(yaml)
