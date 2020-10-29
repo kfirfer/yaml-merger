@@ -40,7 +40,7 @@ class Application(metaclass=Singleton):
     def run(self):
         src.loggings.init(custom_formatter=CustomJSONLog)
         if 'DEV_MODE' in os.environ and os.environ['DEV_MODE'] == "1":
-            self.app.run(host="0.0.0.0", debug=True, port=int(os.environ["SERVER_PORT"]))
+            self.app.run(host="0.0.0.0", debug=False, port=int(os.environ["SERVER_PORT"]))
         else:
             from waitress import serve
             number_of_threads = 4
