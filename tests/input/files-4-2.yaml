@@ -1,8 +1,0 @@
-key1:
-  # comment 1
-  key2:
-    value2: "value2"
-    array:
-      - name: two
-        version: 2
-

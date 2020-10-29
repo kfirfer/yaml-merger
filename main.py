@@ -38,7 +38,7 @@ def move_comment(d, depth=0):
     return d
 
 
-data1 = ruamel.yaml.round_trip_load(Path('tests/input/files-4-1.yaml').read_text())
-update(data1, move_comment(ruamel.yaml.round_trip_load(Path('tests/input/files-4-2.yaml').read_text())))
+data1 = ruamel.yaml.round_trip_load(Path('tests/input/files-4-1.yaml').read_text(), preserve_quotes=True)
+update(data1, move_comment(ruamel.yaml.round_trip_load(Path('tests/input/files-4-2.yaml').read_text(), preserve_quotes=True)))
 ruamel.yaml.round_trip_dump(data1, sys.stdout, indent=INDENT)
 

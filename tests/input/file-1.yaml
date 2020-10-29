@@ -1,0 +1,14 @@
+key1:
+  key2:
+    value1: "value1"
+    #
+    # this is comment of array
+    array:
+      # This is comment of array.one
+      - name: one
+        version: 1
+        another:
+          key2: value2
+        nestedArray:
+          - nest: "nest1"
+            nest2: "nest2"

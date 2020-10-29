@@ -1,0 +1,29 @@
+key1:
+  # This is comment of key2
+  key2:
+    value1: "value1"
+    #
+    # this is comment of array
+    array:
+      # This is comment of array.one
+      - name: one
+        version: 1
+        another:
+          key2: value2
+        nestedArray:
+          - nest: "nest1"
+            nest2: "nest2"
+      - name: two
+        # This is comment of array.two.version : 2
+        version: 2
+        another:
+          key1: value1
+        nestedArray:
+          - nest: "nest3"
+            nest4: "nest4"
+
+    value2: "value2"
+key4: blabla
+key5:
+  ## This is comment of key6
+  key6: 100
